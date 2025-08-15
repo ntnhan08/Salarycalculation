@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tính Lương Trực Quan | Giao Diện Siêu Hiện Đại</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -37,10 +38,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             color: white;
             position: relative;
             overflow-x: hidden;
+        }
+
+        /* Tối ưu hiệu suất */
+        .bg-elements, .section::before, header::before {
+            will-change: transform, opacity;
         }
 
         /* Background Elements */
@@ -74,7 +80,7 @@
             max-width: 1200px;
             background: rgba(18, 18, 18, 0.7);
             backdrop-filter: blur(20px);
-            border-radius: 30px;
+            border-radius: 25px;
             border: 1px solid var(--glass-border);
             box-shadow: var(--shadow);
             overflow: hidden;
@@ -90,7 +96,7 @@
 
         header {
             background: linear-gradient(90deg, rgba(67, 97, 238, 0.5) 0%, rgba(58, 12, 163, 0.5) 100%);
-            padding: 25px 40px;
+            padding: 20px 25px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -121,14 +127,14 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
             text-shadow: 0 2px 10px rgba(0,0,0,0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             font-weight: 700;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
             -webkit-background-clip: text;
@@ -136,7 +142,7 @@
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             opacity: 0.85;
             max-width: 600px;
             margin: 0 auto;
@@ -146,10 +152,10 @@
 
         .language-switcher {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             z-index: 20;
         }
 
@@ -157,15 +163,16 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 8px 15px;
-            border-radius: 30px;
+            padding: 6px 12px;
+            border-radius: 25px;
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             backdrop-filter: blur(5px);
+            font-size: 0.9rem;
         }
 
         .lang-btn:hover {
@@ -182,8 +189,8 @@
         .content {
             display: flex;
             flex-wrap: wrap;
-            padding: 30px;
-            gap: 30px;
+            padding: 20px;
+            gap: 20px;
         }
 
         .section {
@@ -191,8 +198,8 @@
             min-width: 300px;
             background: var(--glass);
             backdrop-filter: blur(10px);
-            border-radius: 25px;
-            padding: 30px;
+            border-radius: 22px;
+            padding: 25px;
             border: 1px solid var(--glass-border);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -202,7 +209,7 @@
         }
 
         .section:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             background: rgba(255, 255, 255, 0.2);
         }
@@ -223,8 +230,8 @@
         .section-title {
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
             position: relative;
@@ -235,19 +242,19 @@
             position: absolute;
             bottom: -1px;
             left: 0;
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: linear-gradient(90deg, var(--accent), var(--success));
             border-radius: 10px;
         }
 
         .section-title i {
-            margin-right: 12px;
-            font-size: 1.5rem;
+            margin-right: 10px;
+            font-size: 1.3rem;
             color: var(--accent);
             background: rgba(255, 255, 255, 0.1);
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -255,32 +262,33 @@
         }
 
         .input-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             position: relative;
         }
 
         .input-label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 500;
             color: rgba(255, 255, 255, 0.85);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            font-size: 0.95rem;
         }
 
         .input-label i {
             color: var(--accent);
             transition: var(--transition);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .input-field {
             width: 100%;
-            padding: 16px 16px 16px 50px;
+            padding: 14px 14px 14px 45px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            font-size: 1.1rem;
+            border-radius: 14px;
+            font-size: 1rem;
             transition: var(--transition);
             background: rgba(0, 0, 0, 0.2);
             color: white;
@@ -301,31 +309,33 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: var(--transition);
         }
 
         .input-field:focus ~ .input-icon {
             color: var(--success);
-            transform: translateY(-50%) scale(1.2);
+            transform: translateY(-50%) scale(1.15);
         }
 
         .date-range-container {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 18px;
         }
 
         .date-range-item {
             flex: 1;
+            min-width: 140px;
             position: relative;
         }
 
         .result-box {
             background: linear-gradient(135deg, rgba(58, 12, 163, 0.3) 0%, rgba(67, 97, 238, 0.3) 100%);
-            border-radius: 20px;
-            padding: 25px;
-            margin-top: 20px;
+            border-radius: 18px;
+            padding: 20px;
+            margin-top: 18px;
             border-left: 4px solid var(--accent);
             animation: fadeScale 0.5s ease-out;
             backdrop-filter: blur(5px);
@@ -340,14 +350,15 @@
         .result-item {
             display: flex;
             justify-content: space-between;
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .result-item:hover {
             background: rgba(255,255,255,0.05);
-            transform: translateX(5px);
+            transform: translateX(4px);
         }
 
         .result-item:last-child {
@@ -359,31 +370,31 @@
             color: rgba(255, 255, 255, 0.9);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .result-label i {
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .result-value {
             font-weight: 600;
             color: white;
             transition: var(--transition);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .total {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: white;
-            margin-top: 15px;
-            padding-top: 15px;
+            margin-top: 12px;
+            padding-top: 12px;
             border-top: 2px solid var(--accent);
         }
 
         .total-value {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: var(--success);
             text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
             transition: var(--transition);
@@ -395,16 +406,16 @@
         .calculate-btn {
             display: block;
             width: 100%;
-            padding: 18px;
+            padding: 16px;
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             border: none;
-            border-radius: 15px;
-            font-size: 1.2rem;
+            border-radius: 14px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            margin-top: 20px;
+            margin-top: 18px;
             box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
             position: relative;
             overflow: hidden;
@@ -427,7 +438,7 @@
         }
 
         .calculate-btn:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             box-shadow: 0 12px 25px rgba(67, 97, 238, 0.4);
         }
 
@@ -441,10 +452,10 @@
 
         .bonus-info {
             background: rgba(76, 201, 240, 0.15);
-            padding: 15px;
-            border-radius: 15px;
-            margin-top: 20px;
-            font-size: 0.95rem;
+            padding: 12px;
+            border-radius: 14px;
+            margin-top: 18px;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.9);
             border-left: 4px solid var(--success);
             animation: fadeIn 0.6s ease-out;
@@ -458,10 +469,10 @@
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             color: rgba(255, 255, 255, 0.7);
             background: rgba(0, 0, 0, 0.2);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
         }
@@ -469,11 +480,11 @@
         .working-days-display {
             background: linear-gradient(90deg, rgba(67, 97, 238, 0.3) 0%, rgba(58, 12, 163, 0.3) 100%);
             color: white;
-            padding: 15px;
-            border-radius: 15px;
+            padding: 14px;
+            border-radius: 14px;
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
             position: relative;
             overflow: hidden;
             animation: pulse 2s infinite;
@@ -483,15 +494,15 @@
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(67, 97, 238, 0); }
+            70% { box-shadow: 0 0 0 12px rgba(67, 97, 238, 0); }
             100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
         }
 
         .calendar-container {
             background: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 20px;
+            border-radius: 18px;
+            padding: 18px;
+            margin-top: 18px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.8s ease-out;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -502,17 +513,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .calendar-nav {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .nav-btn {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: rgba(67, 97, 238, 0.3);
             color: white;
@@ -525,39 +536,40 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
         }
 
         .nav-btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
             background: rgba(76, 201, 240, 0.4);
         }
 
         .current-month {
             font-weight: 600;
             color: white;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
+            gap: 6px;
         }
 
         .calendar-day {
             text-align: center;
-            padding: 12px 0;
+            padding: 10px 0;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .calendar-cell {
-            height: 45px;
+            height: 38px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
@@ -567,6 +579,7 @@
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
+            font-size: 0.9rem;
         }
 
         .calendar-cell:hover {
@@ -603,7 +616,7 @@
             position: absolute;
             bottom: 2px;
             right: 2px;
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             background: white;
             color: var(--danger);
             border-radius: 3px;
@@ -614,8 +627,8 @@
             position: absolute;
             top: 2px;
             right: 2px;
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
             background: var(--danger);
         }
@@ -628,9 +641,9 @@
         /* Cải tiến phần chọn ngày nghỉ */
         .off-day-controls {
             background: rgba(247, 37, 133, 0.15);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
+            border-radius: 14px;
+            padding: 18px;
+            margin-top: 18px;
             border: 1px dashed rgba(247, 37, 133, 0.3);
             animation: fadeIn 0.5s ease-out;
             backdrop-filter: blur(5px);
@@ -640,7 +653,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
 
         .off-day-title {
@@ -648,32 +661,33 @@
             align-items: center;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
-            gap: 10px;
+            gap: 8px;
+            font-size: 1rem;
         }
 
         .off-day-counter {
             background: var(--danger);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 4px 10px;
+            border-radius: 18px;
+            font-size: 0.85rem;
             backdrop-filter: blur(5px);
         }
 
         .off-days-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            min-height: 40px;
+            gap: 8px;
+            min-height: 36px;
         }
 
         .off-day-item {
             background: rgba(247, 37, 133, 0.2);
-            padding: 10px 15px;
-            border-radius: 20px;
+            padding: 8px 12px;
+            border-radius: 18px;
             display: inline-flex;
             align-items: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             position: relative;
             transition: var(--transition);
             animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -702,6 +716,7 @@
             color: white;
             cursor: pointer;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .off-day-item i:hover {
@@ -712,30 +727,31 @@
         .off-day-type {
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-left: 8px;
+            padding: 3px 8px;
+            border-radius: 18px;
+            font-size: 0.75rem;
+            margin-left: 6px;
             backdrop-filter: blur(5px);
         }
 
         .add-off-day {
             display: flex;
-            margin-top: 15px;
+            margin-top: 14px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .add-off-day input, .add-off-day select {
             flex: 1;
-            min-width: 120px;
-            padding: 12px;
+            min-width: 110px;
+            padding: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            border-radius: 10px;
             background: rgba(0, 0, 0, 0.2);
             transition: var(--transition);
             color: white;
             backdrop-filter: blur(5px);
+            font-size: 0.9rem;
         }
 
         .add-off-day input:focus, .add-off-day select:focus {
@@ -748,18 +764,19 @@
             background: var(--danger);
             color: white;
             border: none;
-            padding: 0 20px;
-            border-radius: 12px;
+            padding: 0 16px;
+            border-radius: 10px;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(247, 37, 133, 0.3);
-            gap: 8px;
+            gap: 6px;
             font-weight: 500;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
         }
 
         .add-off-day button:hover {
@@ -771,17 +788,18 @@
         .no-off-days {
             width: 100%;
             text-align: center;
-            padding: 10px;
+            padding: 8px;
             color: rgba(255, 255, 255, 0.5);
             font-style: italic;
+            font-size: 0.9rem;
         }
 
         /* Overtime Styles */
         .overtime-section {
             background: rgba(255, 158, 0, 0.15);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
+            border-radius: 14px;
+            padding: 18px;
+            margin-top: 18px;
             border: 1px dashed rgba(255, 158, 0, 0.3);
             animation: fadeIn 0.5s ease-out;
             backdrop-filter: blur(5px);
@@ -790,7 +808,7 @@
         .overtime-header {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
 
         .overtime-title {
@@ -798,21 +816,22 @@
             align-items: center;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
-            gap: 10px;
+            gap: 8px;
+            font-size: 1rem;
         }
 
         /* Chatbot Styles */
         .chatbot-container {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             z-index: 1000;
             transition: var(--transition);
         }
 
         .chatbot-toggle {
-            width: 65px;
-            height: 65px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -820,17 +839,17 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             transition: var(--transition);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(5px);
         }
 
         .chatbot-toggle:hover {
-            transform: scale(1.1) rotate(15deg);
-            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
+            transform: scale(1.08) rotate(15deg);
+            box-shadow: 0 12px 25px rgba(67, 97, 238, 0.4);
         }
 
         .chatbot-toggle .notification {
@@ -839,10 +858,10 @@
             right: -5px;
             background: var(--danger);
             color: white;
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -851,13 +870,13 @@
 
         .chatbot-window {
             position: absolute;
-            bottom: 80px;
+            bottom: 65px;
             right: 0;
-            width: 380px;
-            height: 480px;
+            width: 320px;
+            height: 400px;
             background: rgba(18, 18, 18, 0.8);
-            border-radius: 25px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-radius: 22px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -878,33 +897,33 @@
         .chatbot-header {
             background: linear-gradient(90deg, rgba(67, 97, 238, 0.5) 0%, rgba(58, 12, 163, 0.5) 100%);
             color: white;
-            padding: 20px;
+            padding: 16px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .chatbot-header h3 {
             font-weight: 500;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
         }
 
         .chatbot-messages {
             flex-grow: 1;
-            padding: 20px;
+            padding: 16px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             background: rgba(0, 0, 0, 0.2);
         }
 
         .message {
             max-width: 85%;
-            padding: 15px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 0.95rem;
             animation: fadeIn 0.3s ease;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -926,23 +945,23 @@
         }
 
         .chatbot-input {
-            padding: 20px;
+            padding: 16px;
             display: flex;
-            gap: 15px;
+            gap: 12px;
             background: rgba(0, 0, 0, 0.3);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .chatbot-input input {
             flex-grow: 1;
-            padding: 14px 20px;
+            padding: 12px 16px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
+            border-radius: 25px;
             outline: none;
             transition: var(--transition);
             background: rgba(0, 0, 0, 0.2);
             color: white;
-            font-size: 1rem;
+            font-size: 0.95rem;
             backdrop-filter: blur(5px);
         }
 
@@ -952,8 +971,8 @@
         }
 
         .chatbot-input button {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -963,30 +982,30 @@
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .chatbot-input button:hover {
-            transform: rotate(15deg) scale(1.1);
-            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+            transform: rotate(15deg) scale(1.08);
+            box-shadow: 0 6px 16px rgba(67, 97, 238, 0.4);
         }
 
         .quick-questions {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 8px;
+            margin-top: 12px;
         }
 
         .quick-question {
             background: rgba(67, 97, 238, 0.3);
             color: white;
             border: none;
-            padding: 10px 15px;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: 22px;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -995,44 +1014,178 @@
 
         .quick-question:hover {
             background: rgba(76, 201, 240, 0.4);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
+        /* Media queries for mobile optimization */
         @media (max-width: 768px) {
             .content {
                 flex-direction: column;
+                padding: 15px;
+                gap: 15px;
             }
             
             h1 {
-                font-size: 2rem;
-            }
-            
-            .date-range-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .chatbot-window {
-                width: 320px;
-                height: 420px;
-                bottom: 70px;
-            }
-
-            .language-switcher {
-                position: relative;
-                top: 0;
-                right: 0;
-                margin-top: 15px;
-                justify-content: center;
-            }
-
-            header {
-                flex-direction: column;
-                padding: 20px 15px;
+                font-size: 1.6rem;
+                gap: 8px;
             }
             
             .section {
-                padding: 25px;
+                padding: 20px;
+                border-radius: 20px;
+            }
+            
+            .section-title {
+                margin-bottom: 18px;
+                font-size: 1.1rem;
+            }
+            
+            .section-title i {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+            }
+            
+            .date-range-container {
+                gap: 10px;
+            }
+            
+            .date-range-item {
+                min-width: 100%;
+            }
+            
+            .input-field {
+                padding: 12px 12px 12px 40px;
+                font-size: 0.95rem;
+            }
+            
+            .input-icon {
+                font-size: 1rem;
+            }
+            
+            .working-days-display {
+                padding: 12px;
+                font-size: 1rem;
+            }
+            
+            .calendar-container {
+                padding: 15px;
+            }
+            
+            .calendar-cell {
+                height: 34px;
+                font-size: 0.85rem;
+            }
+            
+            .result-item {
+                font-size: 0.9rem;
+            }
+            
+            .total-value {
+                font-size: 1.3rem;
+            }
+            
+            .calculate-btn {
+                padding: 14px;
+                font-size: 1rem;
+            }
+            
+            .chatbot-window {
+                width: 300px;
+                height: 380px;
+                bottom: 60px;
+            }
+            
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            
+            header {
+                padding: 15px 20px;
+            }
+            
+            .off-day-controls {
+                padding: 15px;
+            }
+            
+            .add-off-day button {
+                padding: 0 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4rem;
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .section {
+                padding: 18px;
+                border-radius: 18px;
+            }
+            
+            .section-title {
+                font-size: 1rem;
+            }
+            
+            .input-label {
+                font-size: 0.9rem;
+            }
+            
+            .input-field {
+                font-size: 0.9rem;
+            }
+            
+            .calendar-cell {
+                height: 30px;
+                font-size: 0.8rem;
+            }
+            
+            .calendar-day {
+                font-size: 0.8rem;
+            }
+            
+            .result-item {
+                font-size: 0.85rem;
+            }
+            
+            .total {
+                font-size: 1.1rem;
+            }
+            
+            .total-value {
+                font-size: 1.2rem;
+            }
+            
+            .chatbot-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .chatbot-window {
+                width: 280px;
+                height: 360px;
+            }
+            
+            .message {
+                font-size: 0.9rem;
+            }
+            
+            .chatbot-input input {
+                padding: 10px 14px;
+            }
+            
+            .chatbot-input button {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .quick-question {
+                font-size: 0.8rem;
+                padding: 6px 10px;
             }
         }
     </style>
